@@ -53,13 +53,13 @@ La **hierbabuena** se diferencia de la menta en que se esparce más rápido y po
 De cada parcela se conoce:
 * su **ancho** y su **largo**, medidos en metros. (Para evacuar dudas: sí, van en dos atributos distintos.);
 * cuántas **horas de sol** recibe por día;
-* los **cultivos** que tiene, representados por una colección de plantas.
+* las **plantas** que tiene, representadas por una colección.
 
 Y se pide calcular:
 * la **superficie** de la parcela, calculada por... la multiplicación entre `ancho` y `largo`;
-* la **cantidad máxima** de cultivos que tolera, que se calcula de la siguiente manera: si el `ancho` es mayor que el `largo`, la cuenta es `superficie / 5`; si no `superficie / 3 + largo`;
-* saber si algún cultivo **está complicado**, lo cual es así si la parcela recibe más sol del que la planta tolera;
-* poder **plantar una planta** que se recibe por parámetro. El efecto que produce es que se agregue a la colección de cultivos. Esto debe arrojar un error si al plantar se supera la cantidad máxima _o bien_ si la parcela recibe al menos 2 horas más de sol que los que la planta tolera.
+* la **cantidad máxima** de plantas que tolera, que se calcula de la siguiente manera: si el `ancho` es mayor que el `largo`, la cuenta es `superficie / 5`; si no `superficie / 3 + largo`;
+* saber si **está complicada**, lo cual es así si alguna de sus plantas recibe más sol del que tolera;
+* poder **plantar una planta** que se recibe por parámetro. El efecto que produce es que se agregue a la colección. Esto debe arrojar un error si al plantar se supera la cantidad máxima _o bien_ si la parcela recibe al menos 2 horas más de sol que los que la planta tolera.
 
 
 ## 4. Parcelas ideales
@@ -67,24 +67,24 @@ Y se pide calcular:
 Cada planta define ciertas condiciones para saber si una parcela le resulta ideal:
 
 * la **menta** prefiere suelos extensos, por lo cual le resultan ideales las parcelas con una superficie mayor a 6 metros cuadrados. La hierbabuena, como buena menta que es, se comporta igual;
-* la **quinoa** es pequeña y por eso anda mejor en parcelas donde la altura máxima de los cultivos existentes sea menor a 1.5 metros;
+* la **quinoa** es pequeña y por eso anda mejor en parcelas donde la altura máxima de las plantas existentes sea menor a 1.5 metros;
 * la **soja común** va bien si la cantidad de sol que recibe la parcela es exactamente igual a los que ella tolera;
-* la **soja transgénica** está pensada como monocultivo, así que prefiere parcelas cuya cantidad máxima de cultivos sea igual a 1.
+* la **soja transgénica** está pensada como monocultivo, así que prefiere parcelas cuya cantidad máxima de plantas sea igual a 1.
 
 Agregar a las plantas la capacidad de decir si una parcela le resulta ideal.
 
-## 5. Asociación de cultivos
+## 5. Asociación de plantas
 
-La asociación de cultivos es una práctica ancestral que busca maximizar los beneficios de las plantas al plantarlas en conjunto con otras que de alguna manera potencian sus beneficios. Para modelar esto, debemos previamente diferenciar las parcelas en dos tipos: las ecológicas y las industriales.
+La asociación de plantas es una práctica ancestral que busca maximizar los beneficios de las plantas al plantarlas en conjunto con otras que de alguna manera potencian sus beneficios. Para modelar esto, debemos previamente diferenciar las parcelas en dos tipos: las ecológicas y las industriales.
 
 Para saber si una planta **se asocia bien** dentro de una parcela, hay que tener en cuenta:
-* para las **parcelas ecológicas**: que no haya cultivos complicados y que la parcela sea ideal para la planta;
-* para las **parcelas industriales**: que haya como máximo 2 cultivos y que la planta sea fuerte.
+* para las **parcelas ecológicas**: que esté complicada y que la parcela sea ideal para la planta;
+* para las **parcelas industriales**: que haya como máximo 2 plantas y que la planta en cuestión sea fuerte.
 
 ## 6. Estadísticas del INTA
 
 Al Instituto Nacional de Tecnología Agropecuaria (INTA), le interesa realizar una serie de estadísticas sobre todas las parcelas del país. Para ello, agregaremos al modelo un objeto único que represente al INTA, en el cual mantendremos una colección de parcelas.
 
 Se pide realizar dos estadísticas:
-* el **promedio de cultivos** por parcela. Recordar para esto que un promedio se calcula como la suma (de cultivos que hay en cada parcela) divididos por la cantidad (de parcelas que existen);
-* obtener la parcela **más autosustentable**. Para esto, solo consideraremos aquellas parcelas con más de 4 cultivos y elegiremos aquella que tenga mayor porcentaje de plantas "bien asociadas" (ver etapa 5).
+* el **promedio de plantas** por parcela. Recordar para esto que un promedio se calcula como la suma (de plantas que hay en cada parcela) divididos por la cantidad (de parcelas que existen);
+* obtener la parcela **más autosustentable**. Para esto, solo consideraremos aquellas parcelas con más de 4 plantas y elegiremos aquella que tenga mayor porcentaje de plantas "bien asociadas" (ver etapa 5).
