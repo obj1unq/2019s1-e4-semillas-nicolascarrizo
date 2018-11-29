@@ -78,3 +78,10 @@ Para saber si una planta **se asocia bien** dentro de una parcela, hay que tener
 * Para las **parcelas ecológicas**: que no haya cultivos complicados y que la parcela sea ideal para la planta.
 * Para las **parcelas industriales**: que haya como máximo 2 cultivos y que la planta sea fuerte.
 
+## 6. Estadísticas del INTA
+
+Al Instituto Nacional de Tecnología Agropecuaria (INTA), le interesa realizar una serie de estadísticas sobre todas las parcelas del país. Para ello, agregaremos al modelo un objeto único que represente al INTA, en el cual mantendremos una colección de parcelas.
+
+Se pide realizar dos estadísticas:
+* el **promedio de cultivos** por parcela. Recordar para esto que un promedio se calcula como la suma (de cultivos que hay en cada parcela) divididos por la cantidad (de parcelas que existen).
+* obtener la parcela **más autosustentable**. Para esto, solo consideraremos aquellas parcelas con más de 4 cultivos y elegiremos aquella que tenga mayor porcentaje de plantas "bien asociadas" (ver etapa 5).
