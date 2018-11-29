@@ -50,13 +50,31 @@ La **hierbabuena** se diferencia de la menta en que se esparce más rápido y po
 De cada parcela se conoce:
 * Su _ancho_ y su _largo_, medidos en metros. (Para evacuar dudas: sí, van en dos atributos distintos.)
 * Cuántas _horas de sol_ recibe por día.
-* Los _cultivos_ que tiene, representados por una lista de plantas.
+* Los _cultivos_ que tiene, representados por una colección de plantas.
 
 Se pide:
-* La _superficie_ de la parcela, calculada por... la multiplicación entre `ancho` y `largo`.
-* La _cantidad máxima_ de cultivos que tolera, que se calcula de la siguiente manera: si el `ancho` es mayor que el `largo`, la cuenta es `superficie / 5`; si no `superficie / 3 + largo`.
+* La **superficie** de la parcela, calculada por... la multiplicación entre `ancho` y `largo`.
+* La **cantidad máxima** de cultivos que tolera, que se calcula de la siguiente manera: si el `ancho` es mayor que el `largo`, la cuenta es `superficie / 5`; si no `superficie / 3 + largo`.
 * Saber si algún cultivo **está complicado**, lo cual es así si la parcela recibe más sol del que la planta tolera.
-* Poder _plantar una planta_ que se recibe por parámetro. El efecto que produce es que se agregue a la lista de cultivos. Esto debe arrojar un error si al plantar se supera la cantidad máxima _o bien_ si la parcela recibe al menos 2 horas más de sol que los que la planta tolera.
+* Poder **plantar una planta** que se recibe por parámetro. El efecto que produce es que se agregue a la colección de cultivos. Esto debe arrojar un error si al plantar se supera la cantidad máxima _o bien_ si la parcela recibe al menos 2 horas más de sol que los que la planta tolera.
 
 
-## 4. Asociación de cultivos
+## 4. Parcelas ideales
+
+Cada planta define ciertas condiciones para saber si una parcela le resulta ideal:
+
+* la **menta** prefiere suelos extensos, por lo cual le resultan ideales las parcelas con una superficie mayor a 6 metros cuadrados. La hierbabuena, como buena menta que es, se comporta igual;
+* la **quinoa** es pequeña y por eso anda mejor en parcelas donde la altura máxima de los cultivos existentes sea menor a 1.5 metros;
+* la **soja común** va bien si la cantidad de sol que recibe la parcela es exactamente igual a los que ella tolera;
+* la **soja transgénica** está pensada como monocultivo, así que prefiere parcelas cuya cantidad máxima de cultivos sea igual a 1.
+
+Agregar a las plantas la capacidad de decir si una parcela le resulta ideal.
+
+## 5. Asociación de cultivos
+
+La asociación de cultivos es una práctica ancestral que busca maximizar los beneficios de las plantas al plantarlas en conjunto con otras que de alguna manera potencian sus beneficios. Para modelar esto, debemos previamente diferenciar las parcelas en dos tipos: las ecológicas y las industriales.
+
+Para saber si una planta **se asocia bien** dentro de una parcela, hay que tener en cuenta:
+* Para las **parcelas ecológicas**: que no haya cultivos complicados y que la parcela sea ideal para la planta.
+* Para las **parcelas industriales**: que haya como máximo 2 cultivos y que la planta sea fuerte.
+
