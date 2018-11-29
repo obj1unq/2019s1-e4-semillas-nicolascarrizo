@@ -1,5 +1,7 @@
 # Semillas al viento 🌱
 
+<img src="http://www.semillasinia.cl/wp-content/uploads/2014/12/Parcelas-INIA.jpg" />
+
 ## Etapa 1: plantas
 
 * **Es fuerte:** si tolera más de 10 horas de sol al día.
