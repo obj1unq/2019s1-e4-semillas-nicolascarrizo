@@ -6,10 +6,13 @@ A raíz de la [polémica](https://www.elancasti.com.ar/opinion/2018/11/27/ley-cu
 
 ## 1. Plantas
 
-Comenzaremos modelando a cada una de las plantas que hay en la huerta, de las cuales necesitamos trabajar los siguientes aspectos:
+Comenzaremos modelando a cada una de las plantas que hay en la huerta, de las cuales podemos configurar los siguientes aspectos:
 
 * el **año de cosecha** de la semilla. Es decir, en qué año la semilla que le dio origen se sacó de su planta "madre";
 * la **altura** que tiene, medida en metros;
+
+Además, queremos poder preguntarle:
+
 * cuántas **horas de sol tolera**;
 * si **es fuerte** o no;
 * si **da nuevas semillas** o no;
@@ -17,7 +20,7 @@ Comenzaremos modelando a cada una de las plantas que hay en la huerta, de las cu
 
 De todos ellos, el año de cosecha y la altura se configuran para cada planta; el resto se calcula en función de la especia y de características generales.
 
-Se dice que una planta **es fuerte** si tolera más de 10 horas de sol al día; el cálculo de las **horas de sol que tolera** depende exclusivamente de cada especie (ver más abajo).
+Se dice que una planta **es fuerte** si tolera más de 10 horas de sol al día, esto es igual para todas las plantas. El cálculo de las **horas de sol que tolera** depende exclusivamente de cada especie (ver más abajo).
 
 Otro aspecto que nos interesa es saber si **da nuevas semillas**, para lo cual se tiene que cumplir que la planta sea fuerte _o bien_ un aspecto adicional, que define cada especie. En cuanto al **espacio que ocupa**, depende pura y exclusivamente de características de la especie.
 
