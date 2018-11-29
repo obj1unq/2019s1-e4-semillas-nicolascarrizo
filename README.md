@@ -51,15 +51,15 @@ La **hierbabuena** se diferencia de la menta en que se esparce más rápido y po
 ## 3. Parcelas
 
 De cada parcela se conoce:
-* Su _ancho_ y su _largo_, medidos en metros. (Para evacuar dudas: sí, van en dos atributos distintos.)
-* Cuántas _horas de sol_ recibe por día.
-* Los _cultivos_ que tiene, representados por una colección de plantas.
+* su **ancho** y su **largo**, medidos en metros. (Para evacuar dudas: sí, van en dos atributos distintos.);
+* cuántas **horas de sol** recibe por día;
+* los **cultivos** que tiene, representados por una colección de plantas.
 
-Se pide:
-* La **superficie** de la parcela, calculada por... la multiplicación entre `ancho` y `largo`.
-* La **cantidad máxima** de cultivos que tolera, que se calcula de la siguiente manera: si el `ancho` es mayor que el `largo`, la cuenta es `superficie / 5`; si no `superficie / 3 + largo`.
-* Saber si algún cultivo **está complicado**, lo cual es así si la parcela recibe más sol del que la planta tolera.
-* Poder **plantar una planta** que se recibe por parámetro. El efecto que produce es que se agregue a la colección de cultivos. Esto debe arrojar un error si al plantar se supera la cantidad máxima _o bien_ si la parcela recibe al menos 2 horas más de sol que los que la planta tolera.
+Y se pide calcular:
+* la **superficie** de la parcela, calculada por... la multiplicación entre `ancho` y `largo`;
+* la **cantidad máxima** de cultivos que tolera, que se calcula de la siguiente manera: si el `ancho` es mayor que el `largo`, la cuenta es `superficie / 5`; si no `superficie / 3 + largo`;
+* saber si algún cultivo **está complicado**, lo cual es así si la parcela recibe más sol del que la planta tolera;
+* poder **plantar una planta** que se recibe por parámetro. El efecto que produce es que se agregue a la colección de cultivos. Esto debe arrojar un error si al plantar se supera la cantidad máxima _o bien_ si la parcela recibe al menos 2 horas más de sol que los que la planta tolera.
 
 
 ## 4. Parcelas ideales
@@ -78,13 +78,13 @@ Agregar a las plantas la capacidad de decir si una parcela le resulta ideal.
 La asociación de cultivos es una práctica ancestral que busca maximizar los beneficios de las plantas al plantarlas en conjunto con otras que de alguna manera potencian sus beneficios. Para modelar esto, debemos previamente diferenciar las parcelas en dos tipos: las ecológicas y las industriales.
 
 Para saber si una planta **se asocia bien** dentro de una parcela, hay que tener en cuenta:
-* Para las **parcelas ecológicas**: que no haya cultivos complicados y que la parcela sea ideal para la planta.
-* Para las **parcelas industriales**: que haya como máximo 2 cultivos y que la planta sea fuerte.
+* para las **parcelas ecológicas**: que no haya cultivos complicados y que la parcela sea ideal para la planta;
+* para las **parcelas industriales**: que haya como máximo 2 cultivos y que la planta sea fuerte.
 
 ## 6. Estadísticas del INTA
 
 Al Instituto Nacional de Tecnología Agropecuaria (INTA), le interesa realizar una serie de estadísticas sobre todas las parcelas del país. Para ello, agregaremos al modelo un objeto único que represente al INTA, en el cual mantendremos una colección de parcelas.
 
 Se pide realizar dos estadísticas:
-* el **promedio de cultivos** por parcela. Recordar para esto que un promedio se calcula como la suma (de cultivos que hay en cada parcela) divididos por la cantidad (de parcelas que existen).
+* el **promedio de cultivos** por parcela. Recordar para esto que un promedio se calcula como la suma (de cultivos que hay en cada parcela) divididos por la cantidad (de parcelas que existen);
 * obtener la parcela **más autosustentable**. Para esto, solo consideraremos aquellas parcelas con más de 4 cultivos y elegiremos aquella que tenga mayor porcentaje de plantas "bien asociadas" (ver etapa 5).
