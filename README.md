@@ -9,7 +9,7 @@ A raíz de la [polémica](https://www.elancasti.com.ar/opinion/2018/11/27/ley-cu
 Comenzaremos modelando a cada una de las plantas que hay en la huerta, de las cuales podemos configurar los siguientes aspectos:
 
 * el **año de cosecha** de la semilla. Es decir, en qué año la semilla que le dio origen se sacó de su planta "madre";
-* la **altura** que tiene, medida en metros;
+* la **altura** que tiene, medida en metros.
 
 Además, queremos poder preguntarle:
 
