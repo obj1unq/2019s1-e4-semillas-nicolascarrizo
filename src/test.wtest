@@ -1,0 +1,100 @@
+import semillas.*
+import parcelas.*
+
+
+test "menta da nueva semilla"{
+	
+	var menta = new Menta(anioDeObtencion = 2010, altura = 5, horasDeSol = 12)
+	
+	assert.that(menta.daNuevasSemillas())
+}
+
+test "menta tiene una parcela ideal"{
+	
+	var menta = new Menta(anioDeObtencion = 2010, altura = 5, horasDeSol = 12)
+	var parcela = new Parcelas(ancho = 5, largo = 4, horasDeSol= 3, plantas = [])
+
+    assert.that(menta.parcelaIdeal(parcela))
+}
+
+test "espacio que ocupa la soja"{
+	
+	var soja = new Soja(anioDeObtencion = 2010, altura = 6, horasDeSol = 12)
+	
+	assert.equals(3, soja.espacioQueOcupa())
+}
+
+test "la quinoa no tiene parcela ideal"{
+	
+	var quinoa = new Quinoa(anioDeObtencion = 2010, altura = 6, horasDeSol = 12)
+    var parcela = new Parcelas(ancho = 5, largo = 4, horasDeSol= 3, 
+    	plantas = [new Menta(anioDeObtencion = 2010, altura = 5, horasDeSol = 12)]
+    	 )
+   
+   assert.notThat(quinoa.parcelaIdeal(parcela))
+}
+
+test "espacio que ocupa la hierba buena"{
+	
+	var hierbaBuena = new HierbaBuena(anioDeObtencion = 2010, altura = 5, horasDeSol = 12)
+
+   assert.equals(30, hierbaBuena.espacioQueOcupa())
+}
+
+test "cantidad maxima de  tolerancia"{
+	
+	var parcela = new Parcelas(ancho = 5, largo = 4, horasDeSol= 3, 
+    	plantas = [new Menta(anioDeObtencion = 2010, altura = 5, horasDeSol = 12)]
+    	 )
+    	 
+   assert.equals(4, parcela.cantidadMaximaDeTolerancia()) 	 
+}
+
+test "parcela no tiene complicaciones"{
+	
+	
+	var parcela = new Parcelas(ancho = 5, largo = 4, horasDeSol= 3, 
+    	plantas = [new Menta(anioDeObtencion = 2010, altura = 5, horasDeSol = 12)]
+    	 )
+    	 
+    	 assert.notThat(parcela.tieneComplicaciones())
+}
+
+test "no es parcela ecologica"{
+	var parcela = new Parcelas(ancho = 5, largo = 4, horasDeSol= 3, 
+    	plantas = [new Menta(anioDeObtencion = 2010, altura = 5, horasDeSol = 12)]
+    	 )
+	var quinoa = new Quinoa(anioDeObtencion = 2010, altura = 6, horasDeSol = 12)
+	
+	assert.notThat(parcela.parcelaEcologica(quinoa))
+	
+}
+
+test "promedio de plantas inta"{
+	var parcela1 =  new Parcelas(ancho = 5, largo = 4, horasDeSol= 3, 
+    	plantas = [new Menta(anioDeObtencion = 2010, altura = 5, horasDeSol = 12)]
+    	 )
+   var  parcela2 =  new Parcelas(ancho = 5, largo = 4, horasDeSol= 3, 
+    	plantas = [new Menta(anioDeObtencion = 2010, altura = 5, horasDeSol = 12)]
+    	 )
+    	 	 
+	inta.parcelas([parcela1, parcela2])
+	
+	assert.equals(1, inta.promedioDePlantas())
+
+}
+
+test "cantidad de plantas inta"{
+	
+	var parcela1 =  new Parcelas(ancho = 5, largo = 4, horasDeSol= 3, 
+    	plantas = [new Menta(anioDeObtencion = 2010, altura = 5, horasDeSol = 12)]
+    	 )
+   var  parcela2 =  new Parcelas(ancho = 5, largo = 4, horasDeSol= 3, 
+    	plantas = [new Menta(anioDeObtencion = 2010, altura = 5, horasDeSol = 12)]
+    	 )
+    	 	 
+	inta.parcelas([parcela1, parcela2])
+	
+	assert.equals(2, inta. cantDePlantas())
+}
+
