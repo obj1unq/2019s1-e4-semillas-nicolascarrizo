@@ -96,5 +96,7 @@ test "cantidad de plantas inta"{
 	inta.parcelas([parcela1, parcela2])
 	
 	assert.equals(2, inta. cantDePlantas())
+
+
 }
 

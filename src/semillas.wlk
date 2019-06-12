@@ -131,6 +131,8 @@ class HierbaBuena inherits Menta{
 		
 		return (altura * 3) * 2
 	}
+
+
 }
 
 
